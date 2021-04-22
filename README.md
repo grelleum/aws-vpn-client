@@ -25,7 +25,12 @@ SAML Post data to the file
 
 ### How to build OpenVPN on Ubuntu 20
 
-1. Download source from https://openvpn.net/community-downloads/ - click the (+) to get older versions
+1. Install dependencies.
+1. Download source from https://openvpn.net/community-downloads/ - click the (+) to get older versions.
+1. Extract source files.
+1. Apply patch to OpenVPN source.
+1. Build OpenVPN.
+1. Create link to openvpn in project folder.
 
 ```
 sudo apt install liblzo2-dev libpam0g-dev
