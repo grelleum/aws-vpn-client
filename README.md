@@ -22,6 +22,28 @@ SAML Post data to the file
 1. Replace CA section in the sample [vpn.conf](vpn.conf) with one from your AWS configuration
 1. Finally run `aws-connect.sh` to connect to the AWS.
 
+
+### How to build OpenVPN on Ubuntu 20
+
+1. Download source from https://openvpn.net/community-downloads/ - click the (+) to get older versions
+
+```
+sudo apt install liblzo2-dev libpam0g-dev
+
+wget https://swupdate.openvpn.org/community/releases/openvpn-2.4.9.tar.gz
+tar zxvf openvpn-2.4.9.tar.gz
+cd openvpn-2.4.9/
+
+patch -p1 < ../openvpn-v2.4.9-aws.patch
+
+./configure
+make
+
+cd ..
+ln -s openvpn-2.4.9/src/openvpn/openvpn
+```
+
+
 ### Additional Steps
 
 Inspect your ovpn config and remove the following lines if present
